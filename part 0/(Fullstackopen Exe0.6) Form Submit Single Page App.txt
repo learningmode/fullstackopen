@@ -1,0 +1,4 @@
+title (Fullstackopen Exe0.6) Form Submit Single Page App
+
+Browser -> Server:HTTP POST\n https://studies.cs.helsinki.fi/exampleapp/new_note_spa \n[{"content":"This is a single page version","date":"2020-12-17T15:00:18.617Z"}]
+Server --> Browser: 201 status\n[{"message":"note created"}]

@@ -1,0 +1,15 @@
+title (Fullstackopen Ex0.5) User goes to Sing Page App
+
+
+Browser->Server:HTTP GET:https://studies.cs.helsinki.fi/exampleapp/spa
+Server-->Browser:HTML-code
+Browser->Server:HTTP GET:https://studies.cs.helsinki.fi/exampleapp/main.css
+Server--> Browser:main.css
+Browser->Server:HTTP GET:https://studies.cs.helsinki.fi/exampleapp/spa.js
+note over Browser
+browser starts executing JS code and
+requests JSON data from server
+end note 
+Browser->Server:HTTP GET:https://studies.cs.helsinki.fi/exampleapp/data.json
+Server-->Browser:[{ content: "krakadoooom", date: "2020-12-17T00:13:17.153Z"}]
+
