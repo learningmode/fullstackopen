@@ -2,8 +2,28 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-const App =()=>{
+const Header =(props)=>{
+  return <h1>{props.course}</h1>
+}
+const Content = (props)=>{
   let item ='';
+  return(<>
+  {props.parts.map((item)=>{
+    return <p>{item.name}{item.exercises}</p>
+  })}
+  </>)
+}
+const Total =(props)=>{
+  let sum = 0;
+  props.parts.forEach((item) => {
+     sum +=item.exercises
+  });
+  return(
+    <p>Number of exercises {sum}</p>
+  )
+}
+
+const App =()=>{
   const course = 'Half Stack application development'
   const parts = [
     {
@@ -19,18 +39,11 @@ const App =()=>{
       exercises: 14
     }
   ]
-function printMe(item){
-  return <p>{item.name}</p>
-}
  return(
       <div>
-        <h1>{course}</h1>
-        <p>{parts[0].name}</p>
-        {parts.map(function(item){
-           return<p>{item.name}</p>
-        })}
-        <p>Using ForEach</p>
-        {parts.forEach(printMe)}
+        <Header course={course}/>
+        <Content parts={parts}/>
+        <Total parts={parts}/>
       </div>
   )
 }
