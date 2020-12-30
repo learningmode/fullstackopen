@@ -3,19 +3,19 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 const Header =(props)=>{
-  return <h1>{props.course}</h1>
+  return <h1>{props.course.name}</h1>
 }
 const Content = (props)=>{
   let item ='';
   return(<>
-  {props.parts.map((item)=>{
-    return <p>{item.name}{item.exercises}</p>
+  {props.course.parts.map((item,index)=>{
+    return <p key={index}>{item.name}{item.exercises}</p>
   })}
   </>)
 }
 const Total =(props)=>{
   let sum = 0;
-  props.parts.forEach((item) => {
+  props.course.parts.forEach((item) => {
      sum +=item.exercises
   });
   return(
@@ -24,8 +24,9 @@ const Total =(props)=>{
 }
 
 const App =()=>{
-  const course = 'Half Stack application development'
-  const parts = [
+  const course = {
+  name: 'Half Stack application development',
+  parts : [
     {
       name: 'Fundamentals of React',
       exercises: 10
@@ -39,11 +40,12 @@ const App =()=>{
       exercises: 14
     }
   ]
+}
  return(
       <div>
         <Header course={course}/>
-        <Content parts={parts}/>
-        <Total parts={parts}/>
+        <Content course={course}/>
+        <Total course={course}/>
       </div>
   )
 }
