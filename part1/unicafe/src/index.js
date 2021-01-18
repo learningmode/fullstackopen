@@ -13,7 +13,10 @@ const Button = (props)=>{
 
 const Statistics =(props)=>{
   return(
-    <p>{props.text}:{props.display}</p>
+      <tr>
+          <td>{props.text}</td>
+          <td>{props.display}</td>
+      </tr>
   )
 }
 
@@ -21,13 +24,15 @@ const Visibility =(props)=>{
   const {visibleItem,good,neutral,bad} = props;
   if(visibleItem){
     return(
-      <div>
+      <table>
+      <tbody>
         <Statistics display={good} text="Good"/>
         <Statistics display= {neutral} text="Neutral"/>
         <Statistics display={bad} text="Bad"/>
         <Statistics display={(good+bad+neutral)/3} text="Average"/>
         <Statistics display={(good/(good+bad+neutral))*100} text="Positive Percentage"/>
-      </div>
+      </tbody>  
+      </table>
     )
   }
   return(
