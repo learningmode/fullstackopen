@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 [{"D:\\accenturetest\\reactProjects\\fullstackopen\\fullstackopen\\part1\\courseinfo\\src\\index.js":"1"},{"size":995,"mtime":1609360688435,"results":"2","hashOfConfig":"3"},{"filePath":"4","messages":"5","errorCount":0,"warningCount":1,"fixableErrorCount":0,"fixableWarningCount":0,"source":null},"cy24fb","D:\\accenturetest\\reactProjects\\fullstackopen\\fullstackopen\\part1\\courseinfo\\src\\index.js",["6"],{"ruleId":"7","severity":1,"message":"8","line":9,"column":7,"nodeType":"9","messageId":"10","endLine":9,"endColumn":11},"no-unused-vars","'item' is assigned a value but never used.","Identifier","unusedVar"]
+=======
+[{"D:\\accenturetest\\reactProjects\\fullstackopen\\fullstackopen\\part1\\courseinfo\\src\\index.js":"1"},{"size":675,"mtime":1609878233872,"results":"2","hashOfConfig":"3"},{"filePath":"4","messages":"5","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},"cy24fb","D:\\accenturetest\\reactProjects\\fullstackopen\\fullstackopen\\part1\\courseinfo\\src\\index.js",[]]
+>>>>>>> ae97c67 (slight modification to part1)
