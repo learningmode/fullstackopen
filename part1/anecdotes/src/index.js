@@ -4,7 +4,13 @@ import './index.css';
 
 const App =(props)=>{
   const [selected,setSelected]=useState(0);
+  const [vote,setVote]=useState([]);
   const {anecdotes} = props;
+  const voteCopy = [...vote];
+   for(let i=0;i<anecdotes.length;i++){
+       voteCopy.push(0);
+   }
+
   const getRandomNumber = (max,min)=>{
     return Math.floor( Math.random()*(max-min)+min);
   }
@@ -13,12 +19,17 @@ const App =(props)=>{
     let newAnecdote = getRandomNumber(maxLength,0);
     return setSelected(newAnecdote)
   }
+   const upVote=(index)=>{
+     voteCopy[index]+=1;
+     return setVote([...voteCopy]);
+   }
   return(
       <div>
         {props.anecdotes[selected]}
+        has{vote[selected]}
         <div>
           <button onClick={randomAnecdote}>next anecdote</button>
-          <button onClick="">vote</button>
+          <button onClick={()=>upVote(selected)}>vote</button>
         </div>
       </div>
   );
@@ -32,10 +43,6 @@ const anecdotes = [
   'Any fool can write code that a computer can understand. Good programmers write code that humans can understand.',
   'Premature optimization is the root of all evil.',
   'Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.'
-]
+];
 
-
-ReactDOM.render(
-    <App anecdotes={anecdotes}/>,
-  document.getElementById('root')
-);
+ReactDOM.render(<App anecdotes={anecdotes}/>,document.getElementById('root'));
